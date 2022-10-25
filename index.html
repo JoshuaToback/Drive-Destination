@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <title>Flight Tracker</title>
+</head>
+<body>
+    <!-- Main Outer Div -->
+    <div class="outer-container">
+
+    </div>
+
+    <!-- Top Bar Section -->
+    <div class="top-bar">
+        <!-- This is where our current time and date will go -->
+    </div>
+
+    <!-- Input Screen Container -->
+    <div class="inner-container">
+        <section id="input-screen" class="show-screen">
+            
+            <header>
+                <h1 class="inputTop">Flight Tracker</h1>
+                <h2 class="inputTop">Wanna Catch a Flight? Tell us where and when!</h2>
+            </header>
+
+            <div id="inputBox">
+                <!-- Add Departure and Arrival Date Calendar -->
+                <label id="departureLocationTitle">Departure Location</label>
+                <input type='text' id="departureLocation" name="departureLocation" value="">
+                <label id="arrivalLocationTitle">Arrival Location</label>
+                <input type='text' id="arrivalLocation" name="arrivalLocation" value="">
+                <!-- Add Dropdown For AirlineSelector(optional) -->
+                <br>
+                <br>
+                <button id="getFlight">Get Flying!</button>
+            </div>
+        </section>
+
+        <!-- Flight Results -->
+        <section id="flight-screen" class="hide-screen">
+
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Day.js is used to format dates and timezones! -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+    integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+    crossorigin="anonymous"
+  ></script>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" 
+    integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" 
+    crossorigin="anonymous"
+  ></script>
+  <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js" 
+    integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" 
+    crossorigin="anonymous"
+  ></script>
+    <script src="/assets/script.js"></script>
+</body>
+</html>
