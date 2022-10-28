@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/style.css">
-    <title>Flight Tracker</title>
+    <title>Destination Tracker</title>
 </head>
 <body>
     <!-- Main Outer Div -->
@@ -23,57 +23,38 @@
         <section id="input-screen" class="show-screen">
             
             <header>
-                <h1 class="inputTop">Flight Tracker</h1>
-                <h2 class="inputTop">Wanna Catch a Flight? Tell us where and when!</h2>
+                <h1 class="inputTop">Road Tracker</h1>
+                <h2 class="inputTop">Want to Find Out How Far of a Drive a Place is? Enter your destinations below and get driving!</h2>
             </header>
 
             <div id="inputBox">
                 <!-- Add Departure and Arrival Date Calendar -->
                 <label id="departureLocationTitle">Departure Location</label>
-                <input type='text' id="departureLocation" name="departureLocation" value="">
+                <input type='select' id="departureLocation" name="departureLocation" value="">
                 <label id="arrivalLocationTitle">Arrival Location</label>
-                <input type='text' id="arrivalLocation" name="arrivalLocation" value="">
-                <!-- Add Dropdown For AirlineSelector(optional) -->
+                <input type='select' id="arrivalLocation" name="arrivalLocation" value="">
                 <br>
                 <br>
-                <button id="getFlight">Get Flying!</button>
+                <button id="getDrive">Get Driving!</button>
             </div>
         </section>
 
-        <!-- Flight Results -->
-        <section id="flight-screen" class="hide-screen">
+        <!-- Drive Results -->
+        <section id="road-screen" class="hide-screen">
+            <div id="travelStats">
 
+            </div>
+            <div id="destination">
+
+            </div>
+            <div id="arrival">
+                
+            </div>
         </section>
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     <!-- Day.js is used to format dates and timezones! -->
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
