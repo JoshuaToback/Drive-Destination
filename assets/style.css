@@ -1,4 +1,19 @@
+/* Global Variables  */
 :root {
     --skyBlue: rgba(99,197,222);
+    --go: lightgreen;
+    --stop: rgb(197, 0, 0);
+}
 
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+        
+    /* debugging  */
+    border: 1px solid red;
+    
+    /* Default Font  */
+    /* font-family: 'Impact'; */
+    /* color: white; */
 }
