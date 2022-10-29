@@ -1,7 +1,8 @@
 <h1>Drive Destination App</h1>
 <h2>Group members: Josh Toback, Kelly Williams, Alex Doyle, Hunter White<h2>
+<h3>insert link to deployed application</h3>
 
-<h3>Determining the MVP</h3>
+<h4>Determining the MVP</h4>
 
 Q: Who is your audience?<br>
 A: <br>
@@ -27,3 +28,5 @@ So that... <benefit><br>
 Given... <some precondition><br>
 When I... <do some action><br>
 Then I... <expect some result><br>
+
+  <h4>Tools Used: </h4>
