@@ -11,8 +11,6 @@ var topBar = document.querySelector('#top-bar');
 var inputBox = document.querySelector('#inputBox');
 var roadScreen = document.querySelector('#roadScreen');
 
-
-
 // Timezone Plug-Ins
 dayjs.extend(window.dayjs_plugin_utc);
 dayjs.extend(window.dayjs_plugin_timezone);
