@@ -29,13 +29,13 @@
 
             <div id="inputBox">
                 <!-- Add Departure and Arrival Date Calendar -->
-                <label id="departureLocationTitle">Departure Location</label>
-                <input type='select' id="departureLocation" name="departureLocation" value="">
-                <label id="arrivalLocationTitle">Arrival Location</label>
-                <input type='select' id="arrivalLocation" name="arrivalLocation" value="">
+                <label id="departureLocationTitle">Departure Location:</label>
+                <input type='select' id="departureLocation" name="departureLocation" value="" placeholder="Enter Origin Location" required>
+                <label id="arrivalLocationTitle">Arrival Location:</label>
+                <input type='select' id="arrivalLocation" name="arrivalLocation" value="" placeholder="Enter Destination" required>
                 <br>
                 <br>
-                <button id="getDrive">Get Driving!</button>
+                <button id="getDrive" onclick="getDriving">Get Driving!</button>
             </div>
         </section>
 
