@@ -4,13 +4,13 @@ var googlePlacesAPIRootURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSy
 var googlePlacesKey = 'AIzaSyDzsqpnaACAqQPCIPWwjt3yAA-Vyy29Z78'
 
 // DOM Elements
-var innerContainer = document.querySelector('#inner-container');
-var topBar = document.querySelector('#top-bar');
-var inputScreen = document.querySelector('#input-screen');
-var inputBox = document.querySelector('#inputBox');
-var roadScreen = document.querySelector('#roadScreen');
+var innerContainer = document.getElementById('inner-container');
+var topBar = document.getElementById('top-bar');
+var inputScreen = document.getElementById('input-screen');
+var inputBox = document.getElementById('inputBox');
+var roadScreen = document.getElementById('road-screen');
 var storeLocation = localStorage.getItem('storeLocation')
-var addButton = document.querySelector('#getDrive');
+var driveBtn = document.getElementById('getDrive');
 
 // Map Initializer
 let map;
@@ -21,23 +21,6 @@ function createMap() {
     })
 }
 
-// Search Functionality
-//function getDriving(departureLocation, arrivalLocation) {
-  //displayRoad();
-//}
-
-addButton.addEventListener(
-    "click", function getDriving(departureLocation, arrivalLocation) {
-    displayRoad();
-    localStorage.setItem('storeLocation', storeLocation);
-  }
-);
-
-// Hide Search Screen
-function displayRoad() {
-    inputScreen.setAttribute('#hide-screen');
-    roadScreen.setAttribute('#show-screen');
-};
 
 // AutoComplete
 let departureLocation;
@@ -58,6 +41,21 @@ let arrivalLocation;
       componentRestrictions: { country: ["US"] },
       fields: ["place_id", "geometry", "name"],  
     });
-
+    console.log(departureLocation, arrivalLocation);
 }
-          
+
+
+// Hide Search Screen
+function displayRoad() {
+  inputScreen.style.display = 'none';
+// Show Results Screen
+  roadScreen.style.display = 'block';
+  getRoad()
+}
+
+function getRoad(departureLocation, arrivalLocation) {
+  
+};
+
+// Search Functionality
+driveBtn.addEventListener('click', displayRoad);
