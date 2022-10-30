@@ -33,3 +33,9 @@
 /* Input Box Stylings */
 
 /* Drive Results Stylings */
+
+/* Map Stylings */
+#map {
+    height: auto;
+    width: 100%;
+}
