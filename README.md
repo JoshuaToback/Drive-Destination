@@ -17,9 +17,9 @@ A: <br>
 
 <h3>User Stories</h3>
 
-As a... <type of user><br>
-I want... <some goal><br>
-So that... <benefit><br>
+As a commuter <type of user><br>
+I want to calculate the distance and travel time to my destination <some goal><br>
+So that I know when to depart so I will arrive to my destination on time <benefit><br>
 
 
 
