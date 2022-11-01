@@ -5,14 +5,14 @@
 <h4>Determining the MVP</h4>
 
 Q: Who is your audience?<br>
-A: <br>
+A: Users on the go! <br>
 
 
 Q: What is the problem that the product will address?<br>
-A: <br>
+A: It will quickly allow the user to plug in their destination and give them a distance and ETA <br>
 
 Q: How does the product solve that problem?<br>
-A: <br>
+A: The app will bring up the user's destination and ETA once they input their origin <br>
 
 
 <h3>User Stories</h3>
@@ -29,4 +29,6 @@ Given... <some precondition><br>
 When I... <do some action><br>
 Then I... <expect some result><br>
 
-  <h4>Tools Used: </h4>
+  <p>Google Places API</p><br>
+  <p>Google Distance Matrix API API</p><br>
+  <p>Google Distance Matrix API API</p><br>
