@@ -4,69 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Destination Tracker</title>
 </head>
 <body>
-    <!-- Main Outer Div -->
-    <div class="outer-container">
-
-    </div>
-
-    <!-- Top Bar Section -->
-    <div class="top-bar">
-        <!-- This is where our current time and date will go -->
-    </div>
-
     <!-- Input Screen Container -->
-    <div class="inner-container">
-        <section id="input-screen">
-            
-            <header class="jumbotron">
-                <h1 class="inputTop">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh" id="inner-container">
+        <section class="container-xxl text-center border border-dark rounded p-5 m-1" style="background-color: #CFE2F3" id="input-screen">
+            <header>
+                <h1 id="inputTop">
                     Road Tracker
                 </h1>
-                <h2 class="inputTop">
+                <h2 id="inputTop">
                     Want to Find Out How Far of a Drive a Place is? Enter your destinations below and get driving!
                 </h2>
             </header>
-
-            <div id="inputBox">
+            <div class="border border-dark rounded-5 p-5 mt-3 w-50 mx-auto" style="background-color: #8E7CC3" id="inputBox">
+                <div class="d-flex align-items-center" id="dateAndTime">
+                    <div class="border border-dark rounded-3 p-2" style="background-color:#f8b600; width: 250px;">
+                        <h4 id="currentDate">
+                        </h4>
+                        <h4 id="currentTime">
+                        </h4>
+                    </div>
+                </div>
                 <!-- Add Departure and Arrival Date Calendar -->
                 <label id="departureLocationTitle">Departure Location:</label>
-                <input type='select' id="departureLocation" name="departureLocation" value="" placeholder="Enter Origin Location" required>
+                <input class="form-control border border-dark rounded mt-3 w-100" style="background-color: #00FF00" type='select' id="departureLocation" name="departureLocation" value="" placeholder="Enter Origin Location" required>
                 <label id="arrivalLocationTitle">Arrival Location:</label>
-                <input type='select' id="arrivalLocation" name="arrivalLocation" value="" placeholder="Enter Destination" required>
+                <input class="form-control border border-dark rounded mt-3 w-100" style="background-color: #EA9999" type='select' id="arrivalLocation" name="arrivalLocation" value="" placeholder="Enter Destination" required>
                 <br>
                 <br>
-                <button id="getDrive".onclick="getDrive">Get Driving!</button>
+                <button class="btn border border-dark rounded-4 mt-1" style="background-color: #FFE599" id="getDrive".onclick="getDrive">Get Driving!</button>
             </div>
         </section>
 
         <!-- Drive Results -->
         <section id="road-screen">
-            <div id="travelStats">
-
-            </div>
+            <div id="result">
+                <div id="timeDistanceto">
+                    <p id="miles"></p>
+                    <p id="kilos"></p>
+                    <p id="text"></p>
+                </div>
 
             <div id="#map">
 
             </div>
             <div id="destination">
-
+                <p id="departure"></p>
             </div>
             <div id="arrival">
-                
+                <p id="arrival"></p>
             </div>
         </section>
 
     </div>
+
 
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzsqpnaACAqQPCIPWwjt3yAA-Vyy29Z78&libraries=places&callback=initAutocomplete"
       async
       defer
     ></script>
+    <script type = "text/JavaScript" src = " https://MomentJS.com/downloads/moment.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/script.js"></script>
     
