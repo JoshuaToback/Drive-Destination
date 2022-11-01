@@ -22,6 +22,10 @@
 /* Inner Container Stylings */
 #inner-container {
     background-image: url("https://amtengineering.com/wp-content/uploads/2019/09/roadway.jpg");
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header {
