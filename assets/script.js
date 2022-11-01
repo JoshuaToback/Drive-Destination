@@ -12,16 +12,6 @@ var roadScreen = document.getElementById('road-screen');
 var storeLocation = localStorage.getItem('storeLocation')
 var driveBtn = document.getElementById('getDrive');
 var result = document.getElementById('result');
-var map = document.getElementById('map');
-
-// // Map Initializer
-let map;
-function createMap() {
-    map = new google.maps.Map(document.getElementById('map') , {
-        zoom: 6,
-        center: {}
-    })
-}
 
 
 // AutoComplete
@@ -116,8 +106,39 @@ function callback (response, status) {
       $('#text').html(`Distance in Minutes: ${duration_text}`);
       $('#departure').html(`Distance From: ${departure}`);
       $('#arrival').html(`Distance To: ${arrival}`);
-      }
+      } 
     }
+  
+  // // Map Initializer
+function initMap() {
+  var directionsService = new google.maps.DirectionsService();
+  var directionsRenderer = new google.maps.DirectionsRenderer();
+  var ChapelHill = new google.maps.LatLng(35.9132, 79.0558);
+  var mapOptions = {
+    zoom: 6,
+    center: ChapelHill
+  }
+  var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById('directionsPanel'));
+
+  var departure = document.getElementById('departureLocation').value;
+  var arrival = document.getElementById('arrivalLocation').value;
+  var request = {
+    origin: departure,
+    destination: arrival,
+    travelMode: 'DRIVING'
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == 'OK') {
+      directionsRenderer.setDirections(result);
+      console.log('result', result);
+      console.log('status', status);
+      console.log ('map', map);
+    }
+  });
+} ;
+
 
   // Print Results on Drive Screen
   $('#result').submit(function (e) {
@@ -132,12 +153,16 @@ function displayRoad() {
 // Show Results Screen
   roadScreen.style.display = 'block';
 // Change Background Image
-  innerContainer.style.backgroundImage = "url('https://www.mailman.columbia.edu/sites/default/files/styles/hero_1500x632/public/jpg/cph19-rw-1.jpg')";
+  innerContainer.style.backgroundImage = "url('https://www.travelyukon.com/sites/default/files/hero/2017-10/alaskahighway_fn.jpg')";
+  innerContainer.style.backgroundRepeat = 'no-repeat';
+  innerContainer.style.backgroundColor = 'skyblue';
+
   getRoad()
 }
 
 function getRoad() {
   distanceCalc()
+  initMap()
 };
 
 // Search Functionality

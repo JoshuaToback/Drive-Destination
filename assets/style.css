@@ -50,7 +50,7 @@ header {
 
 }
 /* Map Stylings */
-#map {
-    height: auto;
-    width: 100%;
+#directionsPanel {
+    background-color: rgba(127, 255, 212, 0.3);
+    color: white;
 }
