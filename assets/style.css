@@ -11,25 +11,17 @@
     box-sizing: border-box;
         
     /* debugging  */
-    border: 1px solid red;
+    /* border: 1px solid red; */
     
     /* Default Font  */
     /* font-family: 'Impact'; */
     /* color: white; */
 }
 
-
-.show-screen {
-    display: block;
-}
-
-.hide-screen {
-    display: none;
-}
-
-
-/* Input Top Stylings */
-
-/* Input Box Stylings */
-
 /* Drive Results Stylings */
+
+/* Map Stylings */
+#map {
+    height: auto;
+    width: 100%;
+}
