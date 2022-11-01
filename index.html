@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Destination Tracker</title>
@@ -12,7 +12,7 @@
 <body>
     <!-- Input Screen Container -->
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh" id="inner-container">
-        <section class="container-xxl text-center border border-dark rounded p-5 m-1" style="background-color: #CFE2F3" id="input-screen">
+        <section class="container-xxl text-center border border-dark rounded p-5 m-1" style="background-color: rgba(0, 204, 255, 0.3)" id="input-screen">
             <header>
                 <h1 id="inputTop">
                     Road Tracker
@@ -23,17 +23,12 @@
             </header>
             <div class="border border-dark rounded-5 p-5 mt-3 w-50 mx-auto" style="background-color: #8E7CC3" id="inputBox">
                 <div class="d-flex align-items-center" id="dateAndTime">
-                    <div class="border border-dark rounded-3 p-2" style="background-color:#f8b600; width: 250px;">
-                        <h4 id="currentDate">
-                        </h4>
-                        <h4 id="currentTime">
-                        </h4>
+                    <div class="border border-dark rounded-3 p-2" style="background-color:#f8b600; width: 250px;">  
+                        <h4 id="clock"></h4>
                     </div>
                 </div>
                 <!-- Add Departure and Arrival Date Calendar -->
-                <label id="departureLocationTitle">Departure Location:</label>
                 <input class="form-control border border-dark rounded mt-3 w-100" style="background-color: #00FF00" type='select' id="departureLocation" name="departureLocation" value="" placeholder="Enter Origin Location" required>
-                <label id="arrivalLocationTitle">Arrival Location:</label>
                 <input class="form-control border border-dark rounded mt-3 w-100" style="background-color: #EA9999" type='select' id="arrivalLocation" name="arrivalLocation" value="" placeholder="Enter Destination" required>
                 <br>
                 <br>
@@ -43,22 +38,18 @@
 
         <!-- Drive Results -->
         <section id="road-screen">
+            <div id="destination">
+                <p id="departure"></p>
+                <p id="arrival"></p>
+            </div>
             <div id="result">
-                <div id="timeDistanceto">
+                <div id="timeDistanceTo">
                     <p id="miles"></p>
                     <p id="kilos"></p>
                     <p id="text"></p>
                 </div>
-
-            <div id="#map">
-
-            </div>
-            <div id="destination">
-                <p id="departure"></p>
-            </div>
-            <div id="arrival">
-                <p id="arrival"></p>
-            </div>
+                <div id="map">
+                </div>
         </section>
 
     </div>

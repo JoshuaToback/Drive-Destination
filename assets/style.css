@@ -1,25 +1,54 @@
 /* Global Variables  */
 :root {
     --skyBlue: rgba(99,197,222);
-    --go: lightgreen;
-    --stop: rgb(197, 0, 0);
+    --go: rgb(144, 238, 144, 0.7);
+    --stop: rgb(197, 0, 0, 0.7);
 }
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-        
+
+    transition: all 0.7s;
     /* debugging  */
     /* border: 1px solid red; */
     
     /* Default Font  */
-    /* font-family: 'Impact'; */
-    /* color: white; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+/* Inner Container Stylings */
+#inner-container {
+    background-image: url("https://amtengineering.com/wp-content/uploads/2019/09/roadway.jpg");
+}
+
+header {
+    color: white;
+    background-color: var(--skyBlue);
 }
 
 /* Drive Results Stylings */
+#destination {
+    color: white;
+    text-align: center;
+}
 
+#departure {
+    background-color: var(--go);
+}
+
+#arrival {
+    background-color: var(--stop);
+}
+
+#timeDistanceTo {
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+
+}
 /* Map Stylings */
 #map {
     height: auto;

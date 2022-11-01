@@ -12,15 +12,16 @@ var roadScreen = document.getElementById('road-screen');
 var storeLocation = localStorage.getItem('storeLocation')
 var driveBtn = document.getElementById('getDrive');
 var result = document.getElementById('result');
+var map = document.getElementById('map');
 
 // // Map Initializer
-// let map;
-// function createMap() {
-//     map = new google.maps.Map(document.getElementById('map') , {
-//         zoom: 6,
-//         center: {}
-//     })
-// }
+let map;
+function createMap() {
+    map = new google.maps.Map(document.getElementById('map') , {
+        zoom: 6,
+        center: {}
+    })
+}
 
 
 // AutoComplete
@@ -55,13 +56,10 @@ function initAutocomplete() {
 };
 
 function getTime() {
-  var Time = moment().format('h:mm:ss a');
-  var Date = moment().format("MMM Do YY");
-  console.log('Time', Time, 'Date', Date);
-  $('#currentDate').html(`Today Is ${Date}`);
-  $('#currentTime').html(`It Is ${Time}`);
-}
-
+  window.setInterval(function () {
+    $('#clock').html(moment().format('ddd MM/DD/y H:mm:ss'))
+}, 1000);
+};
 getTime();
 
 // // Distance Matrix
@@ -87,10 +85,7 @@ function distanceCalc() {
 function callback (response, status) {
   console.log("response", response)
   console.log("status", status)
-  // console.log("google", google.maps.DistanceMatrixService)
-  // if (status != google.maps.DistanceMatrixService) {
-  //   $('#result').html(err);
-  // } else {
+
     var departure = response.originAddresses[0];
     console.log('departure', departure);
     var arrival = response.destinationAddresses[0];
@@ -136,6 +131,8 @@ function displayRoad() {
   inputScreen.style.display = 'none';
 // Show Results Screen
   roadScreen.style.display = 'block';
+// Change Background Image
+  innerContainer.style.backgroundImage = "url('https://www.mailman.columbia.edu/sites/default/files/styles/hero_1500x632/public/jpg/cph19-rw-1.jpg')";
   getRoad()
 }
 
