@@ -2,6 +2,7 @@
 
 var googlePlacesAPIRootURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDzsqpnaACAqQPCIPWwjt3yAA-Vyy29Z78&callback=initMap";
 var googlePlacesKey = 'AIzaSyDzsqpnaACAqQPCIPWwjt3yAA-Vyy29Z78'
+var tripHistory = []
 
 // DOM Elements
 var innerContainer = document.getElementById('inner-container');
@@ -12,6 +13,7 @@ var roadScreen = document.getElementById('road-screen');
 var storeLocation = localStorage.getItem('storeLocation')
 var driveBtn = document.getElementById('getDrive');
 var result = document.getElementById('result');
+var tripHistoryContainer = document.getElementById('trip-history');
 
 
 // AutoComplete
@@ -52,6 +54,10 @@ function getTime() {
 };
 getTime();
 
+var saveSearch = function() {
+  localStorage.setItem('trip-History', JSON.stringify(tripHistory))
+}
+
 // // Distance Matrix
 function distanceCalc() {
   var origin = $('#departureLocation').val();
@@ -69,7 +75,12 @@ function distanceCalc() {
     avoidHighways: false,
     avoidTolls: false,
   }, callback
-  );
+  ); 
+  tripHistory.push({
+    origin: origin,
+    destination: destination 
+  })
+  saveSearch();
 }
 
 function callback (response, status) {
@@ -167,3 +178,42 @@ function getRoad() {
 
 // Search Functionality
 driveBtn.addEventListener('click', displayRoad);
+
+// // Search History
+function renderSearchHistory() {
+  tripHistoryContainer.innerHTML = '';
+
+  // Starts at the end of TripHistory array and counts down the most recent search.
+  for (var i = tripHistory.length - 1; i >= 0; i--) {
+    var btn = document.createElement('button');
+    btn.setAttribute('button');
+    btn.classList.add('history-btn');
+
+    btn.setAttribute('trip-search', tripHistory[i]);
+    btn.textContent = tripHistory[i];
+    tripHistoryContainer.append(btn);
+    btn.addEventListener('click', function(e) {
+      var trip = e.target.textContent;
+      getRoad(trip);
+    })
+  }
+}
+
+function appendToHistory(search) {
+  // If there's no search term, return the function as is.
+  if (tripHistory.indexOf(search) !== -1) {
+    return;
+  }
+  tripHistory.push(search)
+
+  localStorage.setItem('trip-history', JSON.stringify(tripHistory));
+  renderSearchHistory();
+}
+
+function initTripHistory() {
+  var storedHistory = localStorage.getItem('trip-history');
+  if (storedHistory) {
+    tripHistory = JSON.parse(storedHistory)
+  }
+  renderSearchHistory();
+}
